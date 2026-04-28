@@ -1,78 +1,62 @@
-"""Starter ETL pipeline for NST DVA Capstone 2.
-
-This script is intentionally lightweight. Teams should adapt it to their own dataset,
-but it provides a clean starting point for loading a raw CSV, standardizing columns,
-and exporting a processed file for notebook and Tableau use.
-"""
-
-from __future__ import annotations
-
-import argparse
-from pathlib import Path
-
 import pandas as pd
+import numpy as np
+import os
 
+def extract_data(file_path):
+    """Step 1: Extract - Load the raw CSV file"""
+    print("Extracting data...")
+    return pd.read_csv(file_path)
 
-def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Convert column names to a clean snake_case format."""
-    cleaned = (
-        df.columns.str.strip()
-        .str.lower()
-        .str.replace(r"[^a-z0-9]+", "_", regex=True)
-        .str.strip("_")
-    )
-    result = df.copy()
-    result.columns = cleaned
-    return result
+def transform_data(df):
+    """Step 2: Transform - Clean, Standardize, and Engineer Features"""
+    print("Transforming data...")
+    
 
+    df.rename(columns={'water_availabity': 'water_availability'}, inplace=True)
 
-def basic_clean(df: pd.DataFrame) -> pd.DataFrame:
-    """Apply a few safe default cleaning steps."""
-    result = normalize_columns(df)
-    result = result.drop_duplicates().reset_index(drop=True)
+    if 'Id' in df.columns:
+        df.drop(columns=['Id'], inplace=True)
+    
+   
+    df['social_class'] = df['social_class'].replace('Mouchi', 'Mochi')
+    # Standardize Sex
+    df['sex'] = df['sex'].str.upper().str.strip()
+    
 
-    for column in result.select_dtypes(include="object").columns:
-        result[column] = result[column].astype("string").str.strip()
+    num_cols = df.select_dtypes(include=[np.number]).columns
+    df[num_cols] = df[num_cols].fillna(df[num_cols].median())
+    
+    cat_cols = df.select_dtypes(include=['object']).columns
+    df[cat_cols] = df[cat_cols].fillna('Unknown')
+    
+    q_limit = df['annual_income'].quantile(0.95)
+    df['annual_income'] = np.where(df['annual_income'] > q_limit, q_limit, df['annual_income'])
+    
+    df['disposable_income'] = df['annual_income'] - (df['monthly_expenses'] * 12)
+    df['loan_to_income_ratio'] = (df['loan_amount'] / df['annual_income']) * 100
+    df['total_dependents'] = df['old_dependents'] + df['young_dependents']
+    
+    df_sampled = df.sample(n=10000, random_state=42)
+    
+    return df_sampled
 
-    return result
-
-
-def build_clean_dataset(input_path: Path) -> pd.DataFrame:
-    """Read a raw CSV file and return a cleaned dataframe."""
-    df = pd.read_csv(input_path)
-    return basic_clean(df)
-
-
-def save_processed(df: pd.DataFrame, output_path: Path) -> None:
-    """Write the cleaned dataframe to disk, creating the parent folder if needed."""
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+def load_data(df, output_path):
+    """Step 3: Load - Save the processed data to a CSV file"""
+    print(f"Loading data to {output_path}...")
     df.to_csv(output_path, index=False)
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the Capstone 2 starter ETL pipeline.")
-    parser.add_argument(
-        "--input",
-        required=True,
-        type=Path,
-        help="Path to the raw CSV file in data/raw/.",
-    )
-    parser.add_argument(
-        "--output",
-        required=True,
-        type=Path,
-        help="Path to the cleaned CSV file in data/processed/.",
-    )
-    return parser.parse_args()
-
-
-def main() -> None:
-    args = parse_args()
-    cleaned_df = build_clean_dataset(args.input)
-    save_processed(cleaned_df, args.output)
-    print(f"Processed dataset saved to: {args.output}")
-    print(f"Rows: {len(cleaned_df)} | Columns: {len(cleaned_df.columns)}")
-
+    print("ETL Pipeline completed successfully!")
 
 if __name__ == "__main__":
-    main()
+    RAW_DATA_PATH = 'data/raw/RuralCreditData.csv'
+    PROCESSED_DATA_PATH = 'data/processed/RuralCreditData_processed.csv'
+    
+    os.makedirs('data/processed', exist_ok=True)
+    
+    try:
+       
+        raw_df = extract_data(RAW_DATA_PATH)
+        processed_df = transform_data(raw_df)
+        load_data(processed_df, PROCESSED_DATA_PATH)
+        
+    except Exception as e:
+        print(f"Pipeline failed: {e}")
