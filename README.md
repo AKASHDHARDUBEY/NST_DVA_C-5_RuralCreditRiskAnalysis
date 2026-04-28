@@ -61,11 +61,9 @@ NST_DVA_C-5_RuralCreditRiskAnalysis/
 
 👥 Team C-5 & Contribution Matrix
 Name	   Role	Key         Contribution	                      GitHub Profile
-[AKASH DHAR DUBEY]	Project Lead	Problem Framing & Statistical Analysis	[AKASHDHARDUBEY]
-[Member 2]	ETL Engineer	Data Cleaning & Pipeline Automation	[@username2]
-[Member 3]	Data Analyst	EDA & Insight Generation	[@username3]
-[Member 4]	Visualization Expert	Tableau Dashboard Design	[@username4]
-[Member 5]	Business Strategist	Final Report & Recommendations	[@username5]
+[AKASH DHAR DUBEY]	Project Lead	Problem Framing & Statistical Analysis	[@AKASHDHARDUBEY]
+[Anirudh Panigrahy]	ETL Engineer	Data Cleaning & Pipeline Automation	[@Anirudh-020505]
+[Abhishek varma]	Data Analyst	EDA & Insight Generation	[@it-is-Abhishek]
 
 📈 Key Findings & Recommendations
 Major Insights
