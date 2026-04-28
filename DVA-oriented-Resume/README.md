@@ -22,4 +22,3 @@
 - Delivered 5 data-backed business recommendations to reduce loan default rates through a tiered risk-based pricing model.
 
 ---
-**Pro Tip:** When adding this to your resume, always link to the GitHub repository and the live Tableau dashboard to provide proof of work.

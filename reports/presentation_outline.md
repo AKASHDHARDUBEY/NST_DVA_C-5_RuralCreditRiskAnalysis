@@ -6,7 +6,7 @@
 *   **Main Title:** Rural Credit Risk Analysis & Decision Support System
 *   **Subtitle:** Converting Socio-Economic Data into Credit Intelligence
 *   **Sector:** Rural Finance / Banking
-*   **Team:** Group C-5 (Akash Dhar Dubey, Abhishek varma, Anirudh Panigrahy
+*   **Team:** Group C-5 (Akash Dhar Dubey, Abhishek varma, Anirudh Panigrahy)
 *   
 *   **Institute:** Newton School of Technology
 
