@@ -6,8 +6,8 @@
 *   **Main Title:** Rural Credit Risk Analysis & Decision Support System
 *   **Subtitle:** Converting Socio-Economic Data into Credit Intelligence
 *   **Sector:** Rural Finance / Banking
-*   **Team:** Group C-5 ([List all 5 Member Names])
-*   **Faculty Mentor:** [Insert Mentor Name]
+*   **Team:** Group C-5 (Akash Dhar Dubey, Abhishek varma, Anirudh Panigrahy
+*   
 *   **Institute:** Newton School of Technology
 
 #### **Slide 2: Context & Problem Statement**
@@ -36,8 +36,8 @@
     *   *Logic:* Low (<15% DTI), Medium (15-30%), High (>30%).
 
 #### **Slide 5: Key EDA Insights**
-*   **`[Insert Bar Chart Screenshot]`** $\rightarrow$ **Insight:** The [Insert Top Sector] sector is the most heavily funded, creating a sectoral concentration risk.
-*   **`[Insert Map Screenshot]`** $\rightarrow$ **Insight:** Loan distribution is uneven; specific hubs like [Insert City] show high volume but varied risk levels.
+*   **`[Insert Bar Chart Screenshot]`** $\rightarrow$ **Insight:** The manufacturing sector is the most heavily funded, creating a sectoral concentration risk.
+*   **`[Insert Map Screenshot]`** $\rightarrow$ **Insight:** Loan distribution is uneven; specific hubs like pune show high volume but varied risk levels.
 *   **`[Insert Histogram Screenshot]`** $\rightarrow$ **Insight:** Most loans are standardized at the 5k-7.5k range, regardless of income levels.
 
 #### **Slide 6: Advanced Statistical Analysis**
@@ -53,7 +53,7 @@
 
 #### **Slide 8: Top Decision Insights**
 *   **Insight 1:** Borrowers with negative disposable income are 3x more likely to default.
-*   **Insight 2:** The [Insert Sector] is over-exposed, representing a systemic risk if the sector crashes.
+*   **Insight 2:** The  is over-exposed, representing a systemic risk if the sector crashes.
 *   **Insight 3:** la-income borrowers receiving high-value loans are "Anomaly" cases requiring immediate audit.
 
 #### **Slide 9: Actionable Recommendations**
