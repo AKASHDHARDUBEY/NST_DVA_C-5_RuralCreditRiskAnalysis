@@ -38,30 +38,30 @@ The project follows a rigorous industry-standard ETL process to ensure data inte
 ```text
 NST_DVA_C-5_RuralCreditRiskAnalysis/
 ├── data/
-│   ├── raw/                # Original, unedited dataset (40k rows)
-│   └── processed/          # Cleaned and sampled dataset (10k rows)
+│   ├── raw/                
+│   └── processed/          
 ├── notebooks/
-│   ├── 01_extraction.ipynb      # Data ingestion and initial audit
-│   ├── 02_cleaning.ipynb        # ETL pipeline and standardization
-│   ├── 03_eda.ipynb             # Exploratory Data Analysis & Insights
-│   ├── 04_statistical_analysis.ipynb # Hypothesis testing & Correlation
-│   └── 05_final_load_prep.ipynb # Final production sanity check
+│   ├── 01_extraction.ipynb      
+│   ├── 02_cleaning.ipynb       
+│   ├── 03_eda.ipynb             
+│   ├── 04_statistical_analysis.ipynb 
+│   └── 05_final_load_prep.ipynb 
 ├── scripts/
-│   ├── etl_pipeline.py          # Automated Python script for ETL
-│   └── __init__.py              # Python package initialization
+│   ├── etl_pipeline.py          
+│   └── __init__.py              
 ├── tableau/
-│   ├── screenshots/            # Dashboard visual evidence
-│   └── dashboard_links.md      # Link to the live Tableau Public dashboard
+│   ├── screenshots/            
+│   └── dashboard_links.md     
 ├── docs/
-│   └── data_dictionary.md      # Detailed explanation of all fields
+│   └── data_dictionary.md      
 └── reports/
-    ├── project_report.pdf       # Comprehensive 10-15 page final report
-    └── presentation.pdf         # Final project slide deck
+    ├── project_report.pdf       
+    └── presentation.pdf         
 
 
 👥 Team C-5 & Contribution Matrix
-Name	Role	Key Contribution	GitHub Profile
-[Your Name]	Project Lead	Problem Framing & Statistical Analysis	[@yourusername]
+Name	   Role	Key         Contribution	                      GitHub Profile
+[AKASH DHAR DUBEY]	Project Lead	Problem Framing & Statistical Analysis	[AKASHDHARDUBEY]
 [Member 2]	ETL Engineer	Data Cleaning & Pipeline Automation	[@username2]
 [Member 3]	Data Analyst	EDA & Insight Generation	[@username3]
 [Member 4]	Visualization Expert	Tableau Dashboard Design	[@username4]
@@ -72,7 +72,7 @@ Major Insights
 
 Income Correlation: There is a strong positive correlation between Disposable Income and loan repayment capacity.
 Risk Markers: Borrowers with a Debt-to-Income Ratio exceeding 30% are categorized as "High Risk."
-Sectoral Trends: The [Insert Top Sector] sector has the highest loan volume, but exhibits higher volatility in repayment.
+Sectoral Trends: The  sector has the highest loan volume, but exhibits higher volatility in repayment.
 Geographic Insight: Loan disbursement is heavily concentrated in specific rural hubs, suggesting an opportunity for expansion.
 
 Actionable Recommendations

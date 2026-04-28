@@ -1,14 +1,25 @@
-# DVA-Oriented Resume
 
-Each team member should update their resume to reflect this capstone project.
+## 🚀 Project Summary for Resume
+**Project Title:** Rural Credit Risk Analysis & Decision Support System
+**Tools Used:** Python (Pandas, NumPy, SciPy), Tableau Public, GitHub, Jupyter Notebooks.
 
-## Recommended Resume Points
+## 📝 Recommended Bullet Points
+*Choose the bullet points that best match your specific contribution to the project:*
 
-- Project title, sector, and problem statement
-- Tools used: Python, Jupyter or Colab, Tableau Public, GitHub
-- Your specific contribution area: ETL, EDA, KPI design, dashboarding, reporting
-- Quantifiable outcomes, where possible
+### Option A: Technical & ETL Focus (For Data Engineers)
+- Engineered a full end-to-end ETL pipeline in Python to process 40,000 raw records, implementing median imputation and outlier capping at the 95th percentile.
+- Developed derived business KPIs, including "Disposable Annual Income" and "Debt-to-Income Ratio," to automate risk segmentation.
+- Managed a collaborative GitHub workflow with a team of 5, ensuring 100% version control through structured branching and PRs.
 
-## Suggested Bullet Template
+### Option B: Analysis & Statistics Focus (For Data Scientists)
+- Performed exploratory data analysis (EDA) and statistical hypothesis testing (T-tests) to identify significant socio-economic drivers of loan defaults.
+- Developed a risk-segmentation model (Low, Medium, High) based on financial correlations, reducing the reliance on traditional credit scores.
+- Translated complex statistical results into 8+ actionable business insights to optimize rural loan disbursement strategies.
 
-`Built a data analytics capstone on [sector/problem] using Python, Tableau, and GitHub; cleaned [dataset size], developed KPIs, and delivered dashboard-backed business recommendations.`
+### Option C: Visualization & Strategy Focus (For Business Analysts)
+- Designed and published an interactive Tableau Public dashboard featuring geographic risk mapping and sectoral analysis for stakeholders.
+- Implemented global interactive filters allowing real-time drill-downs into specific social classes and cities.
+- Delivered 5 data-backed business recommendations to reduce loan default rates through a tiered risk-based pricing model.
+
+---
+**Pro Tip:** When adding this to your resume, always link to the GitHub repository and the live Tableau dashboard to provide proof of work.
